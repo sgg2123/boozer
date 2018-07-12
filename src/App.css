@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.list {
+  position: absolute;
+  left: -15px;
+  top: 50px;
+}
+
+.cocktail {
+  font-size: 10pt;
+  text-align: center;
+  border-style: solid;
+}
+
+.selected-cocktail {
+  font-size: 12pt;
+  text-align: left;
+  position: absolute;
+  left: 350px;
+  right: 550px;
+  top: 80px;
+}
+
+.filter {
+  position: absolute;
+  top: 30px;
+  font-size: 12pt;
+  left: 25px;
+}
+
+.form {
+  position: absolute;
+  top: 35px;
+  font-size: 10pt;
+  position: absolute;
+  left: 750px;
+  right: 15px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+input[type=submit] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #3DAEE9;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
