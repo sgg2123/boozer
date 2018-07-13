@@ -2,13 +2,21 @@
   text-align: center;
 }
 
-/* .App-logo {
-  animation: App-logo-spin infinite 15s linear;
-  height: 100px;
+.App-logo1 {
+  animation: App-logo1-spin infinite 7s linear;
+  height: 70px;
   position: absolute;
-  left: 400px;
-  top: 100px;
-} */
+  left: 500px;
+  top: 35px;
+}
+
+.App-logo2 {
+  animation: App-logo2-spin infinite 7s linear;
+  height: 70px;
+  position: absolute;
+  right: 500px;
+  top: 35px;
+}
 
 .App-header {
   background-color: #F43C67;
@@ -99,7 +107,12 @@ button[type=button] {
   font-size: 12pt;
 }
 
-@keyframes App-logo-spin {
+@keyframes App-logo1-spin {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes App-logo2-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }

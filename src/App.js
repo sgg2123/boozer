@@ -153,6 +153,8 @@ class App extends Component {
       <div className="App">
         <h1 className="App-header">Boozy</h1>
         <img src={cocktails} className="App-pic" alt="pic" />
+        <img src='http://www.pngmart.com/files/1/Cocktail-Transparent-Background.png' className="App-logo1" alt="logo1" />
+        <img src='http://www.pngmart.com/files/1/Cocktail-Transparent-Background.png' className="App-logo2" alt="logo2" />
         <Filter searchTerm={this.state.searchTerm} handleSearchChange={this.handleSearchChange}/>
         {
           this.state.selectedCocktail ?
