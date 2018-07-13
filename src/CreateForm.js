@@ -23,7 +23,7 @@ class CreateForm extends React.Component {
             <input type="text" name="instructions" className="form-input" value={this.props.instructions} onChange={this.props.handleChange} />
           </label>
 
-          <h4>Proportions</h4>
+          <p><strong>Proportions:</strong></p>
           {this.props.proportions.map(proportion => {
             return (
               <div key={proportion.id}>

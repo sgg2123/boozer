@@ -10,55 +10,73 @@
   top: 100px;
 } */
 
+.App-header {
+  background-color: #F43C67;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 30pt;
+}
+
 .App-pic {
-  height: 100px;
-  position: absolute;
-  left: 400px;
-  top: 20px;
+  height: 150px;
 }
 
 .list {
   position: absolute;
   left: -15px;
-  top: 50px;
-  bottom: 20px;
+  right: 950px;
+  top: 110px;
+  bottom: 15px;
   overflow: scroll;
+  font-family: Brush Script MT, Brush Script Std, cursive;
 }
 
 .cocktail {
-  font-size: 10pt;
+  font-size: 14pt;
   text-align: center;
   border-style: solid;
 }
 
 .selected-cocktail {
-  font-size: 12pt;
+  font-size: 14pt;
+  font-family: Brush Script MT, Brush Script Std, cursive;
   text-align: left;
   position: absolute;
-  left: 350px;
-  right: 550px;
-  top: 150px;
+  left: 380px;
+  right: 380px;
+  top: 320px;
+  bottom: 15px;
+  overflow: scroll;
+  border-style: solid;
+  padding: 20px;
 }
 
 .filter {
   position: absolute;
-  top: 30px;
+  top: 60px;
   font-size: 12pt;
+  font-family: Brush Script MT, Brush Script Std, cursive;
   left: 25px;
+  padding: 3px;
 }
 
 .form {
   position: absolute;
-  top: 35px;
-  font-size: 10pt;
+  top: 110px;
+  font-size: 14pt;
+  font-family: Brush Script MT, Brush Script Std, cursive;
   position: absolute;
-  left: 750px;
-  right: 15px;
+  left: 950px;
+  right: 25px;
+  bottom: 15px;
+  overflow: scroll;
 }
 
 .form-input {
   width: 100%;
-  padding: 12px 20px;
+  padding: 6px 10px;
   margin: 8px 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -67,11 +85,18 @@
 
 input[type=submit] {
   width: 100%;
-  padding: 12px 20px;
+  padding: 6px 10px;
   margin: 8px 0;
   box-sizing: border-box;
   border-radius: 4px;
   background-color: #3DAEE9;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 12pt;
+}
+
+button[type=button] {
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 12pt;
 }
 
 @keyframes App-logo-spin {

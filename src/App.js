@@ -98,6 +98,8 @@ class App extends Component {
       if (data.error) {
         alert(data.error);
         return;
+      } else {
+        alert('Cocktail Created!')
       }
       fetch('http://localhost:3000/api/v1/cocktails')
       .then(r => r.json())
@@ -144,12 +146,12 @@ class App extends Component {
         ))
       })
     })
-    alert('Cocktail Created!')
   };
 
   render() {
     return (
       <div className="App">
+        <h1 className="App-header">Boozy</h1>
         <img src={cocktails} className="App-pic" alt="pic" />
         <Filter searchTerm={this.state.searchTerm} handleSearchChange={this.handleSearchChange}/>
         {
