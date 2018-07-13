@@ -49,8 +49,6 @@ class CreateForm extends React.Component {
     const description = this.state.description
     const instructions = this.state.instructions
     const proportions = this.state.proportions
-    // const ingredient_name = this.state.proportions[0].ingredient_name
-    // const amount = this.state.proportions[0].amount
     const source = 'User Input'
 
     let body = {name: name, description: description, instructions: instructions, source: source};
@@ -87,16 +85,26 @@ class CreateForm extends React.Component {
         };
 
         fetch(`http://localhost:3000/api/v1/cocktails/${id}`, config)
+        .then(this.setState(
+          {
+            name: "",
+            description: "",
+            instructions: "",
+            proportions: [
+              {
+                id: 0,
+                ingredient_name: "",
+                amount: "",
+              }
+            ],
+          }
+        ))
       })
     })
-
-
-
-    console.log('Your cocktail is', name, ' ', 'Description:', description, ' ', 'Instructions:', instructions, ' ', 'Proportions:', proportions)
+    alert('Cocktail Created!')
   };
 
   render() {
-    console.log(this.state.proportions)
     return (
       <div className="form">
 
@@ -131,11 +139,13 @@ class CreateForm extends React.Component {
                   Amount
                   <input id={proportion.id} key={`amount-${proportion.id}`} type="text" name="amount" className="form-input" value={this.state.proportions[proportion.id].amount} onChange={this.handleChange} />
                 </label>
+                <p> </p>
               </div>
             )
           })}
 
           <div>
+            <p> </p>
             <p> </p>
             <button type="button" onClick={this.handleAddIngredient}>Add Ingredient</button>
             <p> </p>

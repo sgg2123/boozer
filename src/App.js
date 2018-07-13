@@ -4,6 +4,7 @@ import List from './List';
 import SelectedCocktail from './SelectedCocktail';
 import Filter from './Filter';
 import CreateForm from './CreateForm';
+import cocktails from './cocktails.png';
 
 class App extends Component {
   state = {
@@ -44,6 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <img src={cocktails} className="App-pic" alt="pic" />
         <Filter searchTerm={this.state.searchTerm} handleSearchChange={this.handleSearchChange}/>
         {
           this.state.selectedCocktail ?

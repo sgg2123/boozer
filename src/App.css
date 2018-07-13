@@ -2,30 +2,27 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+/* .App-logo {
+  animation: App-logo-spin infinite 15s linear;
+  height: 100px;
+  position: absolute;
+  left: 400px;
+  top: 100px;
+} */
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.App-pic {
+  height: 100px;
+  position: absolute;
+  left: 400px;
+  top: 20px;
 }
 
 .list {
   position: absolute;
   left: -15px;
   top: 50px;
+  bottom: 20px;
+  overflow: scroll;
 }
 
 .cocktail {
@@ -40,7 +37,7 @@
   position: absolute;
   left: 350px;
   right: 550px;
-  top: 80px;
+  top: 150px;
 }
 
 .filter {
@@ -81,3 +78,7 @@ input[type=submit] {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* body {
+   background-image: url('./cocktails.png');
+ } */
