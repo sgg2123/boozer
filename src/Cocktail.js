@@ -1,5 +1,4 @@
 import React from 'react';
-import CocktailDetails from './CocktailDetails';
 
 const Cocktail = (props) => {
   return (

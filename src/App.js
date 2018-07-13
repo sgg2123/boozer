@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import List from './List';
-import Cocktail from './Cocktail';
 import SelectedCocktail from './SelectedCocktail';
 import Filter from './Filter';
 import CreateForm from './CreateForm';

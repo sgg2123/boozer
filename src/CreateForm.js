@@ -1,5 +1,4 @@
 import React from 'react';
-import UUID from 'uuid';
 
 class CreateForm extends React.Component {
   constructor() {
@@ -12,18 +11,18 @@ class CreateForm extends React.Component {
       proportions: [
         {
           id: 0,
-          ingredientName: "",
-          quantity: "",
+          ingredient_name: "",
+          amount: "",
         }
       ],
     };
   }
 
   handleChange = (event) => {
-    if (event.target.name === 'quantity' || event.target.name === 'ingredientName') {
+    if (event.target.name === 'amount' || event.target.name === 'ingredient_name') {
       let proportionsCopy = [...this.state.proportions]
       let newProportions = proportionsCopy.map(prop => {
-        if (prop.id === parseInt(event.target.id)) {
+        if (prop.id === parseInt(event.target.id, 10)) {
           prop[event.target.name] = event.target.value
         }
         return prop
@@ -40,7 +39,7 @@ class CreateForm extends React.Component {
 
   handleAddIngredient = () => {
     this.setState({
-      proportions: this.state.proportions.concat([{id: this.state.proportions.length, ingredientName: '', quantity: ''}])
+      proportions: this.state.proportions.concat([{id: this.state.proportions.length, ingredient_name: '', amount: ''}])
     });
   }
 
@@ -49,8 +48,9 @@ class CreateForm extends React.Component {
     const name = this.state.name.toUpperCase()
     const description = this.state.description
     const instructions = this.state.instructions
-    const ingredientName = this.state.proportions[0].ingredientName
-    const quantity = this.state.proportions[0].quantity
+    const proportions = this.state.proportions
+    // const ingredient_name = this.state.proportions[0].ingredient_name
+    // const amount = this.state.proportions[0].amount
     const source = 'User Input'
 
     let body = {name: name, description: description, instructions: instructions, source: source};
@@ -72,9 +72,14 @@ class CreateForm extends React.Component {
       .then(data => {
 
         let foundCocktail = data.find(cocktail => cocktail.name === name)
-        let id = parseInt(foundCocktail.id)
+        let id = parseInt(foundCocktail.id, 10)
 
-        let body = {proportions: [{ingredient_name: ingredientName, amount: quantity}]};
+        let newArr = []
+        proportions.forEach(prop => {
+          newArr.push({ingredient_name: prop.ingredient_name, amount: prop.amount})
+        })
+
+        let body = {proportions: newArr};
         let config = {
           method: 'PATCH',
           headers: {"Content-type":"application/json"},
@@ -87,7 +92,7 @@ class CreateForm extends React.Component {
 
 
 
-    console.log('Your cocktail is', name, ' ', 'Description:', description, ' ', 'Instructions:', instructions, ' ', 'Ingredients:', ingredientName, ' ', 'Quantity:', quantity)
+    console.log('Your cocktail is', name, ' ', 'Description:', description, ' ', 'Instructions:', instructions, ' ', 'Proportions:', proportions)
   };
 
   render() {
@@ -119,12 +124,12 @@ class CreateForm extends React.Component {
               <div key={proportion.id}>
                 <label>
                   Ingredient Name
-                  <input id={proportion.id} key={`ingredient-${proportion.id}`} type="text" name="ingredientName" className="form-input" value={this.state.proportions[proportion.id].ingredientName} onChange={this.handleChange} />
+                  <input id={proportion.id} key={`ingredient-${proportion.id}`} type="text" name="ingredient_name" className="form-input" value={this.state.proportions[proportion.id].ingredient_name} onChange={this.handleChange} />
                 </label>
 
                 <label>
-                  Quantity
-                  <input id={proportion.id} key={`quantity-${proportion.id}`} type="text" name="quantity" className="form-input" value={this.state.proportions[proportion.id].quantity} onChange={this.handleChange} />
+                  Amount
+                  <input id={proportion.id} key={`amount-${proportion.id}`} type="text" name="amount" className="form-input" value={this.state.proportions[proportion.id].amount} onChange={this.handleChange} />
                 </label>
               </div>
             )
